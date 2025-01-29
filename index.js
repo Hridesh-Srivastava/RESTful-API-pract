@@ -101,3 +101,5 @@ app.post("/delete-secret" , async(req , res) => {
 app.listen(port , () => {
     console.log(`Listening on port ${port}`);
 });
+
+export default app;
