@@ -1,9 +1,17 @@
 import axios from "axios";
 import express from "express";
 import bodyParser from "body-parser";
+import { fileURLToPath } from "url"
+import { dirname, join } from "path"
 
 const app = express();
 const port = 5000;
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+app.set("views", join(__dirname, "views"));
+app.set("view engine", "ejs");
 
 const API_URL = "https://secrets-api.appbrewery.com";
 const myBearerToken = "9dbdfbc1-aef3-4750-8e9d-39fb77dd64c0";
